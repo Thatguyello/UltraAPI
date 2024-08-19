@@ -53,11 +53,12 @@ processResources {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        maven(MavenPublication) {
+            groupId = 'lu.kolja.api'
+            artifactId = 'ultra-api'
+            version = '1.1.9'
+
             from components.java
         }
-    }
-    repositories {
-        mavenLocal()
     }
 }

@@ -1,6 +1,6 @@
 # Project exclude paths
 /.gradle
-/.idea
+/.idea/
 /gradle
 gradle.properties
 settings.gradle

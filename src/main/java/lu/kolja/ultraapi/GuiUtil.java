@@ -18,11 +18,12 @@ public class GuiUtil {
 
 
 
-    public static GuiItem itemBuilder(Material material, String name, int amount, @Nullable List<String> lore, GuiAction<InventoryClickEvent> lambda) {
+    public static GuiItem itemBuilder(Material material, String name, int amount, @Nullable List<String> lore, @Nullable Integer modelData, GuiAction<InventoryClickEvent> lambda) {
         ItemStack is = new ItemStack(material, amount);
         ItemMeta isMeta = is.getItemMeta();
-        isMeta.setDisplayName(name);
-        if (lore != null) isMeta.setLore(lore);
+        isMeta.setDisplayName(UltraAPI.chatFormatter(name));
+        if (lore != null) isMeta.setLore(UltraAPI.chatFormatter(lore));
+        if (modelData != null) isMeta.setCustomModelData(modelData);
         is.setItemMeta(isMeta);
         return ItemBuilder.from(is).asGuiItem(lambda);
     }
